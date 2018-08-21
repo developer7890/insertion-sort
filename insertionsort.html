@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <p>This program will implement insertion sort algorithm</p>
+    <p>This is the unsorted array:</p>
+    <p id="unsortedarray"></p>
+    <p>This is the sorted array:</p>
+    <p id="sortedarray"></p>
+  </body>
+  <script>                                        //inner loop
+     var array=[100,4,2,3435,66777,2,4332,5,0];  //  1st iteration:[4,100,2,3435,66777,2,4332,5,0]
+     var text="";                                //  2nd: []
+     for(var m=0;m<array.length;m++){
+     text+=array[m]+" ";
+     }
+     $("#unsortedarray").html(text);
+     for(var i = 1; i < array.length; i++){
+       var temp = array[i];
+       for(var j = (i - 1);j >= 0&&array[j] > temp;j--){
+           array[j + 1] = array[j];     
+        }
+         array[j + 1] = temp;
+      }
+    var text2="";
+    for(m=0;m<array.length;m++){
+      text2+=array[m]+" ";
+  }
+  $("#sortedarray").html(text2);
+  </script>
+</html>
